@@ -57,3 +57,8 @@ body.hider-vault:not(.is-mobile) .workspace-split.mod-left-split .workspace-side
 .hider-file-nav-header .workspace-leaf-content[data-type=file-explorer] .nav-header {
   display: none;
 }
+
+/* Hide vault switcher */
+.hider-switcher .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
+  display: none;
+}
