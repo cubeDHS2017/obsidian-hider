@@ -79,6 +79,7 @@ interface HiderSettings {
   hideSearchCounts: boolean;
   hideInstructions: boolean;
   hidePropertiesReading: boolean;
+  hideVaultSwitcher: boolean;
   hideVault: boolean;
 }
 const DEFAULT_SETTINGS: HiderSettings = {
@@ -92,6 +93,7 @@ const DEFAULT_SETTINGS: HiderSettings = {
   hideSearchCounts: false,
   hideInstructions: false,
   hidePropertiesReading: false,
+  hideVaultSwitcher: false,
   hideVault: false
 }
 
@@ -223,6 +225,17 @@ class HiderSettingTab extends PluginSettingTab {
       .setName('Hide properties in Reading view')
       .setDesc('Hides the properties section in Reading view.')
       .addToggle(toggle => toggle.setValue(this.plugin.settings.hidePropertiesReading)
+          .onChange((value) => {
+            this.plugin.settings.hidePropertiesReading = value;
+            this.plugin.saveData(this.plugin.settings);
+            this.plugin.refresh();
+            })
+          );
+
+    new Setting(containerEl)
+      .setName('Hide Obsidian vault switcher')
+      .setDesc('Hides the Obsidian Vault Switcher in the left sidebar')
+      .addToggle(toggle => toggle.setValue(this.plugin.settings.hideVaultSwitcher)
           .onChange((value) => {
             this.plugin.settings.hidePropertiesReading = value;
             this.plugin.saveData(this.plugin.settings);
