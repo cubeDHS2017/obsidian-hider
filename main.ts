@@ -62,7 +62,7 @@ export default class Hider extends Plugin {
     document.body.classList.toggle('hider-search-counts', this.settings.hideSearchCounts);
     document.body.classList.toggle('hider-instructions', this.settings.hideInstructions);
     document.body.classList.toggle('hider-meta', this.settings.hidePropertiesReading);
-    document.body.classList.toggle('hider-meta', this.settings.hideVaultSwitcher);
+    document.body.classList.toggle('hider-switcher', this.settings.hideVaultSwitcher);
     document.body.classList.toggle('hider-vault', this.settings.hideVault);
   }
 
