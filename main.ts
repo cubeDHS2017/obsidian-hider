@@ -237,7 +237,7 @@ class HiderSettingTab extends PluginSettingTab {
       .setDesc('Hides the Obsidian Vault Switcher in the left sidebar')
       .addToggle(toggle => toggle.setValue(this.plugin.settings.hideVaultSwitcher)
           .onChange((value) => {
-            this.plugin.settings.hidePropertiesReading = value;
+            this.plugin.settings.hideVaultSwitcher = value;
             this.plugin.saveData(this.plugin.settings);
             this.plugin.refresh();
             })
